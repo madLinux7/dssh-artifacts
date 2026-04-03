@@ -2,18 +2,17 @@ Output demo_wizard.gif
 
   Set Padding 16
   Set FontFamily "Geist Mono"
-  Set TypingSpeed 150ms
+  Set TypingSpeed 100ms
   Set FontSize 16
   Set Width 1000
-  Set Height 580
+  Set Height 500
 
   Sleep 333ms
   Type "dssh create"
-  Sleep 500ms
+  Sleep 333ms
   Enter
 
   Sleep 500ms
-  Set TypingSpeed 100ms
   Type "rpg-server"
   Down
   Type "npc"
