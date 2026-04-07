@@ -5,7 +5,7 @@ Output demo_wizard.gif
   Set TypingSpeed 100ms
   Set FontSize 16
   Set Width 1000
-  Set Height 500
+  Set Height 560
 
   Sleep 333ms
   Type "dssh create"
@@ -26,8 +26,10 @@ Output demo_wizard.gif
   Sleep 500ms
   Down
   Sleep 500ms
+  Down
+  Sleep 500ms
   Enter
-  Sleep 1.5s
+  Sleep 1s
   Tab
   Sleep 1s
   Type "rpg"

@@ -6,7 +6,7 @@ if [ -z "$1" ] || [ "$1" -eq 0 ]; then
   exit 1
 fi
 
-DSSH="./dssh"
+DSSH="dssh"
 
 adjectives=(alpha bravo charlie delta echo foxtrot golf hotel india juliet
             kilo lima mike november oscar papa quebec romeo sierra tango
