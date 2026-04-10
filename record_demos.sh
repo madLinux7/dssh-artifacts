@@ -13,6 +13,7 @@ TAPES=(
     demo_wizard.tape
     demo_config.tape
     demo_tabs.tape
+    demo_welcome.tape
 )
 
 cleanup() {
@@ -26,7 +27,6 @@ cleanup() {
 }
 trap cleanup EXIT
 
-# 1. Backup current DB
 if [[ -f "$DSSH_DIR/$DB" ]]; then
     mv "$DSSH_DIR/$DB" "$BACKUP"
     echo "Backed up $DB to $BACKUP"
@@ -34,7 +34,6 @@ else
     echo "No existing $DB found, skipping backup."
 fi
 
-# 2. Switch to demo DB
 if [[ -f "$DSSH_DIR/$DEMO_DB" ]]; then
     cp "$DSSH_DIR/$DEMO_DB" "$DSSH_DIR/$DB"
     echo "Activated demo database."
@@ -43,13 +42,11 @@ else
     exit 1
 fi
 
-# 3-7. Run all tapes
 for tape in "${TAPES[@]}"; do
     echo "Recording $tape..."
     vhs "$tape"
 done
 
-# 8. Move output GIFs to ../dssh
 mkdir -p "$OUTPUT_DIR"
 for tape in "${TAPES[@]}"; do
     gif="${tape%.tape}.gif"
@@ -62,4 +59,3 @@ for tape in "${TAPES[@]}"; do
 done
 
 echo "Done. All demos created."
-# 9. Cleanup (restore) happens via trap
