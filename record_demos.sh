@@ -9,7 +9,6 @@ OUTPUT_DIR="../dssh"
 
 TAPES=(
     demo_1.tape
-    demo_instant_connect.tape
     demo_wizard.tape
     demo_config.tape
     demo_tabs.tape
